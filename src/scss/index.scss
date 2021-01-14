@@ -1,5 +1,16 @@
- @import "../../node_modules/bootstrap/scss/bootstrap";
- @import "../../node_modules/tiny-slider/src/tiny-slider.scss";
+ @import "../libs/bootstrap/scss/functions";
+ @import "../libs/bootstrap/scss/variables";
+ @import "../libs/bootstrap/scss/mixins";
+ @import "../libs/bootstrap/scss/root";
+ @import "../libs/bootstrap/scss/reboot";
+ @import "../libs/bootstrap/scss/images";
+ @import "../libs/bootstrap/scss/grid";
+ @import "../libs/bootstrap/scss/nav";
+ @import "../libs/bootstrap/scss/navbar";
+ @import "../libs/bootstrap/scss/spinners";
+ @import "../libs/bootstrap/scss/utilities";
+
+ @import "../libs/tiny-slider/src/tiny-slider.scss";
 
 
 

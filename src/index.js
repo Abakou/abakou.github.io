@@ -1,5 +1,5 @@
 window.$ = window.jQuery = require('jquery');
-import {tns} from "tiny-slider/src/tiny-slider";
+import {tns} from "./libs/tiny-slider/src/tiny-slider";
 
 window.app = {
 
