@@ -1,5 +1,6 @@
 window.$ = window.jQuery = require('jquery');
-import {tns} from "./libs/tiny-slider/src/tiny-slider";
+import {tns} from "tiny-slider/src/tiny-slider";
+import "./scss/index.scss";
 
 window.app = {
 
@@ -130,7 +131,7 @@ function ContactSubmit(token) {
 
 /* ======== SMOOTH SCROOL ================= */
 
-$(document).ready(function(){
+jQuery(function(){
 
     if(getComputedStyle(document.body).scrollBehavior)return;
     // Add smooth scrolling to all links
