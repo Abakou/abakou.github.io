@@ -1,9 +1,9 @@
 window.$ = window.jQuery = require('jquery');
-import {tns} from "tiny-slider/src/tiny-slider";
+import { tns } from "tiny-slider/src/tiny-slider";
 import "./scss/index.scss";
 
 window.app = {
-
+    mail_api_url: 'https://formspree.io/f/xjvpjeyq'
 };
 
 
@@ -53,12 +53,12 @@ window.app = {
         $("body").removeClass("offcanvas-active");
     });
 
-    $(".mobile-offcanvas a").on('click', function(){
-        setTimeout(function(){
-            $('.bars-close').click();  
+    $(".mobile-offcanvas a").on('click', function () {
+        setTimeout(function () {
+            $('.bars-close').trigger('click');
         }, 200)
     })
-    
+
 })();
 
 
@@ -87,42 +87,41 @@ window.app = {
 
 /* =============== reCAPTCHA v3 =============== */
 
-function ContactSubmit(token) {
+window.ContactSubmit = function (token) {
 
     var form = $('.contact-me form');
-    $('.contact-me').addClass('sending');
+
+
+    var email = form.find('input[name=email]').val();
+    var message = form.find('input[name=fullname]').val()+" #### "+form.find('textarea[name=message]').val();
 
 
     var data = {
-        name: form.find('input[name=fullname]').val(),
-        email: form.find('input[name=email]').val(),
-        message: form.find('textarea[name=message]').val()
+        email: email,
+        message: message
     }
 
-    //data.message = "Envoyé Par " + data.name + " ########### " + message;
-    //data.name = undefined;
-  
+    $('.contact-me').addClass('sending');
+    
     $.ajax({
         method: 'POST',
-        url: 'https://formspree.io/f/xjvpjeyq',
+        url: window.mail_api_url,
         contentType: "application/json",
         accepts: 'application/json',
         data: JSON.stringify(data)
     }).done(function (response) {
         $('.contact-me').addClass('send-success');
-        if(form[0].reset)form[0].reset();
-    }).fail(function(){
+        if (form[0].reset) form[0].reset();
+    }).fail(function () {
         $('.contact-me').addClass('send-error');
-    })
-    .always(function () {
-    })
+    });
 };
 
 (function () {
     var contact = $('.contact-me');
     var sender = $('.contact-me .sender');
     sender.on('click', function (e) {
-        if (contact.hasClass('send-error') || contact.hasClass('send-success') ){
+        if (contact.hasClass('send-error') || contact.hasClass('send-success')) {
             contact.removeClass('sending send-error  send-success sending');
         }
     })
@@ -131,31 +130,30 @@ function ContactSubmit(token) {
 
 /* ======== SMOOTH SCROOL ================= */
 
-jQuery(function(){
+jQuery(function () {
 
-    if(getComputedStyle(document.body).scrollBehavior)return;
+    if (getComputedStyle(document.body).scrollBehavior) return;
     // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-  
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-  
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      }
-  // End if
+    $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        }
+        // End if
     });
-  });
-  
+});
