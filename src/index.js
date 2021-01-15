@@ -39,8 +39,8 @@ window.app = {
 
 
     // Close menu when pressing ESC
-    $(document).on('keydown', function (event) {
-        if (event.keyCode === 27) {
+    $(document).on('keydown', function (e) {
+        if (e.code === "Escape") {
             $(".off-canvas-screen-overlay").removeClass("show");
             $("body").removeClass("overlay-active");
             $(".mobile-offcanvas").removeClass("show");
@@ -63,12 +63,11 @@ window.app = {
 
 
 (function () {
-
-    $(document).ready(function () {
+    jQuery(function () {
         if (window.pageYOffset > 100) {
             $('.header').addClass("srcolled");
         }
-    })
+    });
 
     $(window).on('scroll', function name(evt) {
         let csp = window.pageYOffset;
@@ -93,7 +92,7 @@ window.ContactSubmit = function (token) {
 
 
     var email = form.find('input[name=email]').val();
-    var message = form.find('input[name=fullname]').val()+" #### "+form.find('textarea[name=message]').val();
+    var message = form.find('input[name=fullname]').val() + " #### " + form.find('textarea[name=message]').val();
 
 
     var data = {
@@ -102,10 +101,10 @@ window.ContactSubmit = function (token) {
     }
 
     $('.contact-me').addClass('sending');
-    
+
     $.ajax({
         method: 'POST',
-        url: window.mail_api_url,
+        url: window.app.mail_api_url,
         contentType: "application/json",
         accepts: 'application/json',
         data: JSON.stringify(data)
