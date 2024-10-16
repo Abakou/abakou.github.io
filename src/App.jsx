@@ -34,7 +34,7 @@ function App() {
           </div>
         </div>
         <div className='w-full '>
-          <img src="/assets/hero1.png" className='w-full rounded-lg max-w-[32rem]' />
+          <img src="/assets/hero.png" className='w-full rounded-lg max-w-[32rem]' />
         </div>
       </section>
       <Hr />
