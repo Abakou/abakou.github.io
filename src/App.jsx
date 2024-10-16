@@ -30,7 +30,7 @@ function App() {
           </div>
 
           <div className='mt-12 flex gap-4 lg:gap-6 items-center mb-16 lg:mb-0'>
-            <a href="mailto:abakou.nz@gmail.com" className='font-mono dark:bg-yellow-600  bg-yellow-500  px-5 py-2.5 rounded-full hover:px-8 transition-all'>
+            <a href="https://wa.me/22997206401" target='_blank' className='font-mono dark:bg-yellow-600  bg-yellow-500  px-5 py-2.5 rounded-full hover:px-8 transition-all'>
               <span className='flex items-center gap-5 text-nowrap'>
                 <span>Hire me </span> <span className='rounded-full w-[0.8rem] h-[0.4rem] bg-black/50'></span>
               </span>
