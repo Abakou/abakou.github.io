@@ -65,7 +65,7 @@ function App() {
             description={"kyasms is a platform designed to offer bulk SMS services, enabling businesses and individuals to send messages to large groups efficiently. It focuses on providing fast, reliable, and affordable SMS delivery solutions, which can be used for marketing campaigns, notifications, alerts, and customer engagement."}
             year={"2021-Now"}
             role={"FullStack developer & Cofounder"}
-            link={"https://izichange.com"}
+            link={"https://kyasms.net"}
           />
 
           <FeatureSection
