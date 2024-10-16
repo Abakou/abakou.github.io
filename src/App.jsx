@@ -6,9 +6,10 @@ import ContactForm from './components/ContactForm';
 import GithubLink from './components/GithubLink';
 import UpworkLink from './components/UpworkLink';
 import LinkedInLink from './components/LinkedInLink';
+import { Fragment } from 'react';
 
 function App() {
-  return <div>
+  return <Fragment>
     <Header />
     <main className='max-w-screen-xl mx-auto'>
       <section className='lg:flex  gap-20 items-center py-20 px-6 xl:px-0'>
@@ -141,7 +142,7 @@ function App() {
     <footer className='py-24 text-center text-xs '>
       <span className='opacity-40'>&copy; 2024 Abakou</span>
     </footer>
-  </div>
+  </Fragment>
 }
 
 export default App

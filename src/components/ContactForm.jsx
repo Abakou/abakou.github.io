@@ -1,28 +1,41 @@
 import axios from "axios";
 import { useState } from "react"
+import { CheckIcon } from "@radix-ui/react-icons";
+import { motion } from "framer-motion"
 
 export default function ContactForm(props) {
 
     const [form, setForm] = useState({})
 
     const [l, setL] = useState()
+    const [s, setS] = useState()
+
 
     function handleChange(evt) {
         setForm(f => ({ ...f, [evt.target.name]: evt.target.value }))
     }
-
 
     function handleSubmit(evt) {
         evt.preventDefault();
         setL(true)
         axios.post('https://formspree.io/f/xjvpjeyq', form).then(r => {
             setForm(f => ({}))
+            setS(true)
         }).catch(e => {
             console.log(e);
 
-        }).finally(()=>{
+        }).finally(() => {
             setL(undefined)
         });
+    }
+
+    if (s) {
+        return <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-green-600/10 py-44 px-4 rounded-xl border border-green-600 text-center">
+            <button className="bg-green-500 p-2 text-sm font-bold rounded-md px-4 hover:bg-green-700" onClick={() => setS(false)}><span className="pe-1">Message envoyé</span> <CheckIcon className="inline" /></button>
+        </motion.div>
     }
 
     return <form action="" onSubmit={handleSubmit}>
