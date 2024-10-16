@@ -7,8 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
+reactapp/node_modules
+reactapp/dist
 dist-ssr
 *.local
 
