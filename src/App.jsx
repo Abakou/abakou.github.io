@@ -8,6 +8,13 @@ import UpworkLink from './components/UpworkLink';
 import LinkedInLink from './components/LinkedInLink';
 import { Fragment } from 'react';
 
+
+import hero_image from './assets/hero.png';
+import izichange_1_image from './assets/izichange.png';
+import izichange_2_image from './assets/izichange2.png';
+import izipay_image from './assets/izipay.png';
+import kyasms_image from './assets/kyasms.png';
+
 function App() {
   return <Fragment>
     <Header />
@@ -34,7 +41,7 @@ function App() {
           </div>
         </div>
         <div className='w-full '>
-          <img src="/assets/hero.png" className='w-full rounded-lg max-w-[32rem]' />
+          <img src={hero_image} className='w-full rounded-lg max-w-[32rem]' />
         </div>
       </section>
       <Hr />
@@ -51,7 +58,7 @@ function App() {
         <div className='mt-24 flex flex-col gap-32'>
           <FeatureSection
             badge="Decentralized finance"
-            image="/assets/izipay.png"
+            image={izipay_image}
             title={"Cryptocurrency payment platform"}
             description={"pay.izichange.com is the payment gateway solution. It providing a streamlined and efficient method for businesses and individuals to accept cryptocurrency payments. It focuses on enabling smooth transactions through a secure, intuitive, and fast system that caters to merchants looking to integrate crypto payments into their platforms."}
             year={"2023-2024"}
@@ -61,7 +68,7 @@ function App() {
 
           <FeatureSection
             badge="Marketing"
-            image="/assets/kyasms.png"
+            image={kyasms_image}
             title={"Marketing SMS Provider"}
             description={"kyasms is a platform designed to offer bulk SMS services, enabling businesses and individuals to send messages to large groups efficiently. It focuses on providing fast, reliable, and affordable SMS delivery solutions, which can be used for marketing campaigns, notifications, alerts, and customer engagement."}
             year={"2021-Now"}
@@ -71,7 +78,7 @@ function App() {
 
           <FeatureSection
             badge="Decentralized finance"
-            image="/assets/izichange.png"
+            image={izichange_1_image}
             title={"Cryptocurrency exchange platform"}
             description={"izichange.com is a cryptocurrency exhcnage platform that simplifies the process of buy and sell crypto, managing, and processing cryptocurrency transactions for businesses and individuals. The platform provides a secure, efficient, and user-friendly solution for Web3 actors"}
             year={"2022-2024"}
