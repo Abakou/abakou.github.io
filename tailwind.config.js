@@ -10,11 +10,15 @@ export default {
     extend:{
       fontFamily: {
         bebas: ['Bebas Neue', 'cursive'], // Ajoutez Bebas Neue à votre configuration
-        manrope: ['Manrope', 'sans-serif']
+        manrope: ['Manrope', 'sans-serif'],
+        playwrite: ['Playwrite GB S','cursive'],
+        rowdies:["Rowdies", 'sans-serif']
       },
       colors:{
         //abk:"#001b48"
-        abk:"#0A0A0A"
+        abk:"#0A0A0A",
+        redfr:"#ce1126",
+        bluefr:"#002654"
       }
     }
   },

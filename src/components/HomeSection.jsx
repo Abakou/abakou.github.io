@@ -31,7 +31,7 @@ export default function HomeSection(props) {
     }, []);
 
 
-    return <section {...{ ...props, className: undefined }} className={cn("py-16 px-10 sm:px-20 2xl::px-10 opacity-0 translate-y-44 transition duration-1000 ease-out", props.className)} ref={sectionRef}>
+    return <section {...{ ...props, className: undefined }} className={cn("py-16 px-10 sm:px-20 2xl::px-0 opacity-0 translate-y-44 transition duration-1000 ease-out", props.className)} ref={sectionRef}>
         {props.children}
     </section>
 }

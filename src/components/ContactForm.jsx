@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react"
 import { CheckIcon } from "@radix-ui/react-icons";
-import { motion } from "framer-motion"
 
 export default function ContactForm(props) {
 
@@ -30,12 +29,10 @@ export default function ContactForm(props) {
     }
 
     if (s) {
-        return <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+        return <div
             className="bg-green-600/10 py-44 px-4 rounded-xl border border-green-600 text-center">
             <button className="bg-green-500 p-2 text-sm font-bold rounded-md px-4 hover:bg-green-700" onClick={() => setS(false)}><span className="pe-1">Message envoyé</span> <CheckIcon className="inline" /></button>
-        </motion.div>
+        </div>
     }
 
     return <form action="" onSubmit={handleSubmit}>

@@ -1,4 +1,4 @@
-import Header from './Header'
+import Header from './components/Header'
 import FeatureSection from './components/FeatureSection'
 import Hr from './components/Hr'
 
@@ -16,6 +16,7 @@ import izipay_image from './assets/izipay.png';
 import kyasms_image from './assets/kyasms.png';
 import HomeSection from './components/HomeSection';
 import ViewPort from './components/ViewPort';
+import { ReactTyped } from 'react-typed';
 
 function App() {
   return <Fragment>
@@ -24,12 +25,34 @@ function App() {
       <HomeSection className="" id="hero" >
         <div className='lg:flex  gap-20 items-center'>
           <div className='w-full'>
-            <h1 className='text-8xl font-bebas tracking-wide'>
-              HI, I AM <br />
-              ABAKOU NAZAIRE
+            <h1 className='text-8xl font-rowdies tracking-wide'>
+              <span className='font-manrope' >HI, I AM</span> <br />
+              <span className='text-redfr'>Abakou</span> <span className=' text-bluefr dark:text-blue-700'>Nazaire</span>
             </h1>
-            <div className='max-w-md text-xl dark:opacity-60 mt-6 font-mono'>
-              Fullstack, Web3 developer passionate about building awesome apps.
+
+            <div className="max-w-md min-h-14 text-xl dark:opacity-60 mt-6 font-mono">
+              <ReactTyped
+                backSpeed={20}
+                onBegin={function noRefCheck() { }}
+                onComplete={function noRefCheck() { }}
+                onDestroy={function noRefCheck() { }}
+                onLastStringBackspaced={function noRefCheck() { }}
+                onReset={function noRefCheck() { }}
+                onStart={function noRefCheck() { }}
+                onStop={function noRefCheck() { }}
+                onStringTyped={function noRefCheck() { }}
+                onTypingPaused={function noRefCheck() { }}
+                onTypingResumed={function noRefCheck() { }}
+                startDelay={1000}
+                startWhenVisible
+                showCursor={false}
+                strings={[
+                  'Fullstack, Web3 developer passionate about building awesome apps.'
+                ]}
+                typeSpeed={50}
+                typedRef={function noRefCheck() { }}
+                className=''
+              />
             </div>
 
             <div className='mt-12 flex gap-4 lg:gap-6 items-center mb-16 lg:mb-0'>
@@ -156,7 +179,7 @@ function App() {
       <span className='opacity-40'>&copy; 2024 Abakou</span>
     </footer>
 
-    <ViewPort/>
+    <ViewPort />
   </Fragment>
 }
 
