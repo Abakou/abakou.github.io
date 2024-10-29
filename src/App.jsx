@@ -25,7 +25,7 @@ function App() {
       <HomeSection className="" id="hero" >
         <div className='lg:flex  gap-20 items-center'>
           <div className='w-full'>
-            <h1 className='text-8xl font-rowdies tracking-wide'>
+            <h1 className='text-7xl md:text-8xl font-rowdies tracking-wide'>
               <span className='font-manrope' >HI, I AM</span> <br />
               <span className='text-redfr'>Abakou</span> <span className=' text-bluefr dark:text-blue-700'>Nazaire</span>
             </h1>
