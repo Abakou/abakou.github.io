@@ -15,6 +15,7 @@ import izichange_2_image from './assets/izichange2.png';
 import izipay_image from './assets/izipay.png';
 import kyasms_image from './assets/kyasms.png';
 import HomeSection from './components/HomeSection';
+import ViewPort from './components/ViewPort';
 
 function App() {
   return <Fragment>
@@ -154,6 +155,8 @@ function App() {
     <footer className='py-24 text-center text-xs '>
       <span className='opacity-40'>&copy; 2024 Abakou</span>
     </footer>
+
+    <ViewPort/>
   </Fragment>
 }
 
