@@ -14,38 +14,42 @@ import izichange_1_image from './assets/izichange.png';
 import izichange_2_image from './assets/izichange2.png';
 import izipay_image from './assets/izipay.png';
 import kyasms_image from './assets/kyasms.png';
+import HomeSection from './components/HomeSection';
 
 function App() {
   return <Fragment>
     <Header />
     <main className='max-w-screen-xl mx-auto'>
-      <section className='lg:flex  gap-20 items-center py-20 px-6 xl:px-0'>
-        <div className='w-full'>
-          <h1 className='text-8xl font-bebas tracking-wide'>
-            HI, I AM <br />
-            ABAKOU NAZAIRE
-          </h1>
-          <div className='max-w-md text-xl dark:opacity-60 mt-6 font-mono'>
-            Fullstack, Web3 developer passionate about building awesome apps.
-          </div>
+      <HomeSection className="" id="hero" >
+        <div className='lg:flex  gap-20 items-center'>
+          <div className='w-full'>
+            <h1 className='text-8xl font-bebas tracking-wide'>
+              HI, I AM <br />
+              ABAKOU NAZAIRE
+            </h1>
+            <div className='max-w-md text-xl dark:opacity-60 mt-6 font-mono'>
+              Fullstack, Web3 developer passionate about building awesome apps.
+            </div>
 
-          <div className='mt-12 flex gap-4 lg:gap-6 items-center mb-16 lg:mb-0'>
-            <a href="https://wa.me/22997206401" target='_blank' className='font-mono dark:bg-yellow-600  bg-yellow-500  px-5 py-2.5 rounded-full hover:px-8 transition-all'>
-              <span className='flex items-center gap-5 text-nowrap'>
-                <span>Hire me </span> <span className='rounded-full w-[0.8rem] h-[0.4rem] bg-black/50'></span>
-              </span>
-            </a>
-            <GithubLink />
-            <LinkedInLink />
-            <UpworkLink />
+            <div className='mt-12 flex gap-4 lg:gap-6 items-center mb-16 lg:mb-0'>
+              <a href="https://wa.me/22997206401" target='_blank' className='font-mono dark:bg-yellow-600  bg-yellow-500  px-5 py-2.5 rounded-full hover:px-8 transition-all'>
+                <span className='flex items-center gap-5 text-nowrap'>
+                  <span>Hire me </span> <span className='rounded-full w-[0.8rem] h-[0.4rem] bg-black/50'></span>
+                </span>
+              </a>
+              <GithubLink />
+              <LinkedInLink />
+              <UpworkLink />
+            </div>
+          </div>
+          <div className='w-full '>
+            <img src={hero_image} className='w-full rounded-lg max-w-[32rem]' />
           </div>
         </div>
-        <div className='w-full '>
-          <img src={hero_image} className='w-full rounded-lg max-w-[32rem]' />
-        </div>
-      </section>
+      </HomeSection>
+
       <Hr />
-      <section className='py-16 px-6 sm:px-12 md:px-24 lg:px-6 xl:px-2' id='works'>
+      <HomeSection id='works'>
 
         <h1 className='text-6xl font-bebas tracking-wide'>
           FEATURED PROJECTS
@@ -79,6 +83,7 @@ function App() {
           <FeatureSection
             badge="Decentralized finance"
             image={izichange_1_image}
+            verso={izichange_2_image}
             title={"Cryptocurrency exchange platform"}
             description={"izichange.com is a cryptocurrency exhcnage platform that simplifies the process of buy and sell crypto, managing, and processing cryptocurrency transactions for businesses and individuals. The platform provides a secure, efficient, and user-friendly solution for Web3 actors"}
             year={"2022-2024"}
@@ -89,11 +94,11 @@ function App() {
 
 
         </div>
-      </section>
+      </HomeSection>
 
       <Hr />
 
-      <section className='py-16 px-6 sm:px-12 md:px-24 lg:px-6 xl:px-2' id='about_me'>
+      <HomeSection id='about_me'>
         <div className='flex gap-16 flex-col lg:flex-row'>
 
           <div className='w-full'>
@@ -111,12 +116,12 @@ function App() {
           </div>
         </div>
 
-      </section>
+      </HomeSection>
 
       <Hr />
 
 
-      <section className='py-16 px-6 sm:px-12 md:px-24 lg:px-6 xl:px-2' id='contact'>
+      <HomeSection id='contact'>
         <div className='flex gap-16 flex-col lg:flex-row'>
 
           <div className='w-full'>
@@ -143,7 +148,7 @@ function App() {
 
         </div>
 
-      </section>
+      </HomeSection>
     </main>
 
     <footer className='py-24 text-center text-xs '>
