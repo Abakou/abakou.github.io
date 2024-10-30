@@ -17,8 +17,11 @@ import kyasms_image from './assets/kyasms.png';
 import HomeSection from './components/HomeSection';
 import ViewPort from './components/ViewPort';
 import { ReactTyped } from 'react-typed';
+import Footer from './components/Footer';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const {t} = useTranslation()
   return <Fragment>
     <Header />
     <main className='max-w-screen-xl mx-auto'>
@@ -26,39 +29,27 @@ function App() {
         <div className='lg:flex  gap-20 items-center'>
           <div className='w-full'>
             <h1 className='text-7xl md:text-8xl font-rowdies tracking-wide'>
-              <span className='font-manrope' >HI, I AM</span> <br />
+              <span className='font-manrope' >{t('HI, I AM')}</span> <br />
               <span className='text-redfr'>Abakou</span> <span className=' text-bluefr dark:text-blue-700'>Nazaire</span>
             </h1>
 
             <div className="max-w-md min-h-14 text-xl dark:opacity-60 mt-6 font-mono">
               <ReactTyped
                 backSpeed={20}
-                onBegin={function noRefCheck() { }}
-                onComplete={function noRefCheck() { }}
-                onDestroy={function noRefCheck() { }}
-                onLastStringBackspaced={function noRefCheck() { }}
-                onReset={function noRefCheck() { }}
-                onStart={function noRefCheck() { }}
-                onStop={function noRefCheck() { }}
-                onStringTyped={function noRefCheck() { }}
-                onTypingPaused={function noRefCheck() { }}
-                onTypingResumed={function noRefCheck() { }}
                 startDelay={1000}
                 startWhenVisible
                 showCursor={false}
                 strings={[
-                  'Fullstack, Web3 developer passionate about building awesome apps.'
+                  t('Fullstack, Web3 developer passionate about building useful apps')
                 ]}
                 typeSpeed={50}
-                typedRef={function noRefCheck() { }}
-                className=''
               />
             </div>
 
             <div className='mt-12 flex gap-4 lg:gap-6 items-center mb-16 lg:mb-0'>
               <a href="https://wa.me/22997206401" target='_blank' className='font-mono dark:bg-yellow-600  bg-yellow-500  px-5 py-2.5 rounded-full hover:px-8 transition-all'>
                 <span className='flex items-center gap-5 text-nowrap'>
-                  <span>Hire me </span> <span className='rounded-full w-[0.8rem] h-[0.4rem] bg-black/50'></span>
+                  <span>{t('Hire me')} </span> <span className='rounded-full w-[0.8rem] h-[0.4rem] bg-black/50'></span>
                 </span>
               </a>
               <GithubLink />
@@ -76,19 +67,19 @@ function App() {
       <HomeSection id='works'>
 
         <h1 className='text-6xl font-bebas tracking-wide'>
-          FEATURED PROJECTS
+          {t('FEATURED PROJECTS')}
         </h1>
 
         <h4 className='font-manrope dark:opacity-50'>
-          Here are some of the recents projects i've worked on.
+          {t("Here are some of the recents projects i've worked on")}
         </h4>
 
         <div className='mt-24 flex flex-col gap-32'>
           <FeatureSection
-            badge="Decentralized finance"
+            badge={t("Decentralized finance")}
             image={izipay_image}
-            title={"Cryptocurrency payment platform"}
-            description={"pay.izichange.com is the payment gateway solution. It providing a streamlined and efficient method for businesses and individuals to accept cryptocurrency payments. It focuses on enabling smooth transactions through a secure, intuitive, and fast system that caters to merchants looking to integrate crypto payments into their platforms."}
+            title={t("Cryptocurrency payment platform")}
+            description={t("izipay_desc")}
             year={"2023-2024"}
             role={"FullStack & Tech Lead"}
             link={"https://pay.izichange.com"}
@@ -127,15 +118,15 @@ function App() {
 
           <div className='w-full'>
             <h1 className='text-6xl font-bebas tracking-wide'>
-              ABOUT ME
+              {t("ABOUT ME")}
             </h1>
 
-            <h4 className='opacity-50 mt-5'>I do not have much to say</h4>
+            <h4 className='opacity-50 mt-5'>{t("I do not have much to say")}</h4>
           </div>
 
           <div className='w-full'>
             <h1 className='text-4xl italic tracking-wide'>
-              Love make things easy
+              {t("Love make things easy")}
             </h1>
           </div>
         </div>
@@ -150,7 +141,7 @@ function App() {
 
           <div className='w-full'>
             <h1 className='text-6xl font-bebas tracking-wide'>
-              LETS CONNECT
+              {t("LETS CONNECT")}
             </h1>
 
             <h5 className='text-lg my-4 leading-loose'>
@@ -167,18 +158,12 @@ function App() {
 
           <div className='w-full'>
             <ContactForm />
-
           </div>
-
         </div>
 
       </HomeSection>
     </main>
-
-    <footer className='py-24 text-center text-xs '>
-      <span className='opacity-40'>&copy; 2024 Abakou</span>
-    </footer>
-
+    <Footer />
     <ViewPort />
   </Fragment>
 }

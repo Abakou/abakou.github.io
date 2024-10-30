@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Hr from "./Hr";
 
 import { OpenInNewWindowIcon } from "@radix-ui/react-icons";
@@ -13,6 +14,8 @@ export default function FeatureSection({
     verso = null
 
 }) {
+
+    const {t}=useTranslation()
     return <div className='flex flex-col-reverse lg:flex-row gap-12'>
 
         <div className='w-full bg-black/10 bg-opacity-10  dark:bg-white/10 rounded-2xl p-4 pb-16'>
@@ -34,11 +37,11 @@ export default function FeatureSection({
             </h4>
 
             <div className='mt-8'>
-                <div className="mb-2">PROJECT INFO</div>
+                <div className="mb-2">{t('PROJECT INFO')}</div>
 
                 <Hr />
                 <div className='flex py-5'>
-                    Year <span className='ms-auto'>{year}</span>
+                    {t('Year')} <span className='ms-auto'>{year}</span>
                 </div>
                 <Hr />
                 <div className='flex py-5'>
@@ -46,7 +49,7 @@ export default function FeatureSection({
                 </div>
                 <Hr />
                 <div className='mt-4'>
-                    <a href={link} target="_blank" className='text-yellow-600 font-bold flex items-center'><span className="me-4">View project</span> <OpenInNewWindowIcon /></a>
+                    <a href={link} target="_blank" className='text-yellow-600 font-bold flex items-center'><span className="me-4">{t('View project')}</span> <OpenInNewWindowIcon /></a>
                 </div>
             </div>
         </div>
