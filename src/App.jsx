@@ -145,7 +145,7 @@ function App() {
             </h1>
 
             <h5 className='text-lg my-4 leading-loose'>
-              Say hello at <a href="mailto:abakou.nz@gmail.com" className='font-bold text-yellow-700'>abakou.nz@gmail.com</a> <br />
+              {t("Say hello at")} <a href="mailto:abakou.nz@gmail.com" className='font-bold text-yellow-700'>abakou.nz@gmail.com</a> <br />
               For more info, here’s my <a href="figma" className='font-bold text-yellow-700'>resume</a> <br />
             </h5>
 
